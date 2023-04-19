@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  ch3_php-apache:
+    ports:
+      - "8083:80"
+    build: './build/php'
+  ch3_db:
+    build: './build/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 87W1%^xfBuYl
+      MYSQL_DATABASE: ch3challenge
+    volumes:
+      - dbData:/var/lib/mysql
+volumes:
+  app:
+  dbData:

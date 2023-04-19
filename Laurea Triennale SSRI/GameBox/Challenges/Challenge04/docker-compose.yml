@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  ch4_php-apache:
+    build: './build/php'
+    networks:
+      ch4_network:
+        ipv4_address: '10.0.4.3'
+  reverse_proxy:
+    ports:
+      - "8084:80"
+    build: './build/python'
+    networks:
+      ch4_network:
+        ipv4_address: '10.0.4.2'
+  ch4_db:
+    build: './build/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 87W1%^xfBuYl
+      MYSQL_DATABASE: ch4challenge
+    volumes:
+      - dbData:/var/lib/mysql
+    networks:
+      ch4_network:
+        ipv4_address: '10.0.4.4'
+networks:
+  ch4_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: '10.0.4.0/24'
+          gateway:  10.0.4.1
+volumes:
+  app:
+  dbData:

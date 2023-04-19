@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  ch10_php-apache:
+    ports:
+      - "8090:80"
+    build: './build/php'
+    networks:
+      ch10_network:
+  ch10_private_php-apache:
+    build: './build/php_private'
+    networks:
+      ch10_network:
+        ipv4_address: '10.0.10.168'
+networks:
+  ch10_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: '10.0.10.0/24'
+          gateway:  10.0.10.1
+volumes:
+  app:
+  dbData:

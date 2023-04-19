@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  ch1_php-apache:
+    ports:
+      - "8081:8081"
+    build: './build/php'
+    networks:
+      default:
+      admin_ch1_network:
+            ipv4_address: '10.0.1.2'
+  ch1_db:
+    build: './build/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 87W1%^xfBuYl
+      MYSQL_DATABASE: ch1challenge
+    volumes:
+      - dbData:/var/lib/mysql
+    networks:
+      default:
+  admin_ch1:
+    build: './build/python'
+    networks:
+      admin_ch1_network:
+        ipv4_address: '10.0.1.3'
+    extra_hosts:
+      - "challenge01.gamebox:10.0.1.2"
+networks:
+  default:
+    driver: bridge
+  admin_ch1_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: '10.0.1.0/24'
+          gateway:  10.0.1.1
+volumes:
+  app:
+  dbData:

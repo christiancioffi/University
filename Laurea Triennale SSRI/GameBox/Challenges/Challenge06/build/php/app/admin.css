@@ -1,0 +1,29 @@
+body {
+  width: 100%;
+  float: left;
+  background-color:#95a5a6;
+}
+h1,h2,h3{
+  text-align: center;
+}
+#profilebtn{
+   position:fixed;
+   left:1%;
+   top:2%;
+   border-style: solid;
+   border-width : 1px 1px 1px 1px;
+   text-decoration : none;
+   padding : 4px;
+   border-color : #000000
+}
+
+#next_img{
+   position:fixed;
+   left:80%;
+   top:80%;
+   border-style: solid;
+   border-width : 1px 1px 1px 1px;
+   text-decoration : none;
+   padding : 4px;
+   border-color : #000000
+}

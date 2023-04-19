@@ -1,0 +1,58 @@
+body {
+  width: 100%;
+  float: left;
+  background-color:#95a5a6;
+}
+
+#ctrlpanel {
+  width: 50%;
+  float: left;
+  height: 100%;
+  border-style: double;
+  position: relative;
+  left: 25%;
+  padding-bottom: 1%;
+}
+form {
+  position: relative;
+  left: 40%;
+  bottom: 20%;
+}
+p {
+  padding-top: 5%;
+  text-align: center;
+}
+h1,h2,h3{
+  text-align: center;
+}
+span#ok{
+  position: relative;
+  left: 40%;
+  color: green;
+}
+span#error{
+  position: relative;
+  left: 40%;
+  color: red;
+}
+
+#logoutbtn{
+   position:fixed;
+   left:0.5%;
+   top:2%;
+   border-style: solid;
+  border-width : 1px 1px 1px 1px;
+  text-decoration : none;
+  padding : 4px;
+  border-color : #000000
+}
+#bugbtn{
+   position:fixed;
+   right:1%;
+   top:2%;
+   border-style: solid;
+   border-width : 1px 1px 1px 1px;
+   text-decoration : none;
+   padding : 4px;
+   border-color : #000000
+}

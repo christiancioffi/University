@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  ch6_php-apache:
+    ports:
+      - "8086:8086"
+    build: './build/php'
+    networks:
+      default:
+      admin_ch6_network:
+        ipv4_address: '10.0.6.2'
+  ch6_db:
+    build: './build/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 87W1%^xfBuYl
+      MYSQL_DATABASE: ch6challenge
+    volumes:
+      - dbData:/var/lib/mysql
+    networks:
+      default:
+  admin_ch6:
+    build: './build/python'
+    networks:
+      admin_ch6_network:
+        ipv4_address: '10.0.6.3'
+    extra_hosts:
+      - "challenge06.gamebox:10.0.6.2"
+networks:
+  default:
+    driver: bridge
+  admin_ch6_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: '10.0.6.0/24'
+          gateway:  10.0.6.1
+volumes:
+  app:
+  dbData:

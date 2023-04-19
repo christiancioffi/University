@@ -1,0 +1,68 @@
+body {
+  width: 100%;
+  float: left;
+  background-color:#95a5a6;
+}
+
+#load_img {
+  width: 50%;
+  float: left;
+  height: 100%;
+  border-style: double;
+  position: relative;
+  left: 25%;
+}
+
+#result_img {
+  width: 50%;
+  float: left;
+  height: 100%;
+  position: relative;
+  left: 25%;
+}
+
+form{
+  padding-left: 40%;
+  padding-bottom: 5%;
+}
+p {
+  padding-top: 5%;
+  text-align: center;
+}
+h1,h2,h3{
+  text-align: center;
+}
+span.error{
+  position: relative;
+  left: 40%;
+  color: red;
+}
+span.ok{
+  position: relative;
+  left: 40%;
+  color: green;
+}
+#img_link{
+  float: right;
+  margin-right:5%;
+  text-decoration: none;
+  color: black;
+}
+#img_link:hover{
+  color: grey;
+}
+#image{
+  position: relative;
+  left: 30%;
+}
+
+#backbtn{
+   position:fixed;
+   left:1%;
+   top:2%;
+   border-style: solid;
+   border-width : 1px 1px 1px 1px;
+   text-decoration : none;
+   padding : 4px;
+   border-color : #000000
+}

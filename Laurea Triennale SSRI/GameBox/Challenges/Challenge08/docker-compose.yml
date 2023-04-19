@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  ch8_php-apache:
+    ports:
+      - "8088:80"
+    build: './build/php'
+  ch8_db:
+    build: './build/mysql'
+    environment:
+      MYSQL_ROOT_PASSWORD: 74Xz!mNp3!6z
+      MYSQL_DATABASE: ch8challenge
+    volumes:
+      - dbData:/var/lib/mysql
+volumes:
+  app:
+  dbData:
